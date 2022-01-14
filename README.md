@@ -25,13 +25,26 @@ No providers.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | >= 4.19.1 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
 
 <!-- TFDOCS_INPUTS_START -->
 ## Required Inputs
 
-No required inputs.
+The following input variables are required:
+
+### <a name="input_token"></a> [token](#input\_token)
+
+Description: Github token to be used for given organization to manage its settings.
+
+Type: `string`
+
+### <a name="input_owner"></a> [owner](#input\_owner)
+
+Description: Github organization name to manage.
+
+Type: `string`
 
 ## Optional Inputs
 
