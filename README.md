@@ -1,11 +1,10 @@
-# terraform-module-template
-Template for Terraform modules
+# Terraform GitHub Organization module
 
-<!-- Uncomment and replace with your module name
-[![lint](https://github.com/flaconi/<MODULENAME>/workflows/lint/badge.svg)](https://github.com/flaconi/<MODULENAME>/actions?query=workflow%3Alint)
-[![test](https://github.com/flaconi/<MODULENAME>/workflows/test/badge.svg)](https://github.com/flaconi/<MODULENAME>/actions?query=workflow%3Atest)
-[![Tag](https://img.shields.io/github/tag/flaconi/<MODULENAME>.svg)](https://github.com/flaconi/<MODULENAME>/releases)
--->
+Terraform module to manage settings of GitHub organization
+
+[![lint](https://github.com/flaconi/terraform-github-organization/workflows/lint/badge.svg)](https://github.com/flaconi/terraform-github-organization/actions?query=workflow%3Alint)
+[![test](https://github.com/flaconi/terraform-github-organization/workflows/test/badge.svg)](https://github.com/flaconi/terraform-github-organization/actions?query=workflow%3Atest)
+[![Tag](https://img.shields.io/github/tag/flaconi/terraform-github-organization.svg)](https://github.com/flaconi/terraform-github-organization/releases)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 <!-- TFDOCS_HEADER_START -->
@@ -26,13 +25,26 @@ No providers.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | >= 4.19.1 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
 
 <!-- TFDOCS_INPUTS_START -->
 ## Required Inputs
 
-No required inputs.
+The following input variables are required:
+
+### <a name="input_token"></a> [token](#input\_token)
+
+Description: Github token to be used for given organization to manage its settings.
+
+Type: `string`
+
+### <a name="input_owner"></a> [owner](#input\_owner)
+
+Description: Github organization name to manage.
+
+Type: `string`
 
 ## Optional Inputs
 
