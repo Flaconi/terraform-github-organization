@@ -79,6 +79,7 @@ test: _pull-tf
 		echo "------------------------------------------------------------"; \
 		if docker run $$(tty -s && echo "-it" || echo) --rm -v "$(CURRENT_DIR):/t" --workdir "$${DOCKER_PATH}" hashicorp/terraform:$(TF_VERSION) \
 			init \
+			  -compact-warnings \
 				-lock=false \
 				-upgrade \
 				-reconfigure \
@@ -97,13 +98,14 @@ test: _pull-tf
 		echo "------------------------------------------------------------"; \
 		if docker run $$(tty -s && echo "-it" || echo) --rm -v "$(CURRENT_DIR):/t" --workdir "$${DOCKER_PATH}" hashicorp/terraform:$(TF_VERSION) \
 			validate \
+			  -compact-warnings \
 				$(ARGS) \
 				.; then \
 			echo "OK"; \
-			docker run $$(tty -s && echo "-it" || echo) --rm -v "$(CURRENT_DIR):/t" --workdir "$${DOCKER_PATH}" --entrypoint=rm hashicorp/terraform:$(TF_VERSION) -rf .terraform/ || true; \
+			docker run $$(tty -s && echo "-it" || echo) --rm -v "$(CURRENT_DIR):/t" --workdir "$${DOCKER_PATH}" --entrypoint=rm hashicorp/terraform:$(TF_VERSION) -rf .terraform/ .terraform.lock.hcl || true; \
 		else \
 			echo "Failed"; \
-			docker run $$(tty -s && echo "-it" || echo) --rm -v "$(CURRENT_DIR):/t" --workdir "$${DOCKER_PATH}" --entrypoint=rm hashicorp/terraform:$(TF_VERSION) -rf .terraform/ || true; \
+			docker run $$(tty -s && echo "-it" || echo) --rm -v "$(CURRENT_DIR):/t" --workdir "$${DOCKER_PATH}" --entrypoint=rm hashicorp/terraform:$(TF_VERSION) -rf .terraform/ .terraform.lock.hcl || true; \
 			exit 1; \
 		fi; \
 		echo; \

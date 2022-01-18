@@ -7,6 +7,12 @@ Terraform module to manage settings of GitHub organization
 [![Tag](https://img.shields.io/github/tag/flaconi/terraform-github-organization.svg)](https://github.com/flaconi/terraform-github-organization/releases)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
+## Important notice
+
+:warning: This module uses experimental optional attributes.
+
+More about it [here](https://www.terraform.io/language/expressions/type-constraints#experimental-optional-object-type-attributes).
+
 <!-- TFDOCS_HEADER_START -->
 
 
@@ -15,7 +21,9 @@ Terraform module to manage settings of GitHub organization
 <!-- TFDOCS_PROVIDER_START -->
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_github"></a> [github](#provider\_github) | >= 4.19.1 |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -48,14 +56,33 @@ Type: `string`
 
 ## Optional Inputs
 
-No optional inputs.
+The following input variables are optional (have default values):
+
+### <a name="input_secrets"></a> [secrets](#input\_secrets)
+
+Description: Global organization secrets
+
+Type:
+
+```hcl
+map(object({
+    encrypted_value = optional(string)
+    plaintext_value = optional(string)
+    visibility      = string # "all", "private" or "selected"
+    repositories    = optional(set(string))
+  }))
+```
+
+Default: `{}`
 
 <!-- TFDOCS_INPUTS_END -->
 
 <!-- TFDOCS_OUTPUTS_START -->
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_secrets"></a> [secrets](#output\_secrets) | A map of create secret names |
 
 <!-- TFDOCS_OUTPUTS_END -->
 
