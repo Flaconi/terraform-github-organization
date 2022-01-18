@@ -23,7 +23,7 @@ More about it [here](https://www.terraform.io/language/expressions/type-constrai
 
 | Name | Version |
 |------|---------|
-| <a name="provider_github"></a> [github](#provider\_github) | 4.19.1 |
+| <a name="provider_github"></a> [github](#provider\_github) | >= 4.19.1 |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -80,7 +80,9 @@ Default: `{}`
 <!-- TFDOCS_OUTPUTS_START -->
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_secrets"></a> [secrets](#output\_secrets) | A map of create secret names |
 
 <!-- TFDOCS_OUTPUTS_END -->
 
