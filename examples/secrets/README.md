@@ -5,11 +5,16 @@ This example will multiple secrets for organization.
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | >= 4.19.1 |
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_github"></a> [github](#provider\_github) | >= 4.19.1 |
 
 ## Modules
 
@@ -19,13 +24,15 @@ No providers.
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [github_repository.test](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_token"></a> [token](#input\_token) | Github token token | `string` | n/a | yes |
+| <a name="input_token"></a> [token](#input\_token) | Github token | `string` | n/a | yes |
 | <a name="input_org"></a> [org](#input\_org) | Github organization | `string` | n/a | yes |
 
 ## Outputs

@@ -1,5 +1,5 @@
 variable "token" {
-  description = "Github token token"
+  description = "Github token"
   type        = string
 }
 
@@ -8,10 +8,20 @@ variable "org" {
   type        = string
 }
 
+provider "github" {
+  token = var.token
+  owner = var.org
+}
+
+resource "github_repository" "test" {
+  name = "test-repository"
+
+  visibility = "private"
+}
+
 module "organization" {
   source = "../../"
-  token  = var.token
-  owner  = var.org
+  name   = var.org
 
   secrets = {
     TEST_SECRET = {
@@ -27,9 +37,11 @@ module "organization" {
       # Ecnryption: https://docs.github.com/en/rest/reference/actions#create-or-update-an-organization-secret
       encrypted_value = "P1wD+Byzy0JvL77qILs1gLj1wpDIDYIKGcHJbuILlTq3lNLgxDQuHXLVYknj2nx6uaeNGx3AmgsO+Nak"
       visibility      = "selected"
-      repositories    = ["test-repostiory"]
+      repositories    = [github_repository.test.name]
     }
   }
+
+  depends_on = [github_repository.test]
 }
 
 output "secrets" {
