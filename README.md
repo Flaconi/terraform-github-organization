@@ -42,13 +42,7 @@ More about it [here](https://www.terraform.io/language/expressions/type-constrai
 
 The following input variables are required:
 
-### <a name="input_token"></a> [token](#input\_token)
-
-Description: Github token to be used for given organization to manage its settings.
-
-Type: `string`
-
-### <a name="input_owner"></a> [owner](#input\_owner)
+### <a name="input_name"></a> [name](#input\_name)
 
 Description: Github organization name to manage.
 
