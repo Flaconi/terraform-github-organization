@@ -14,3 +14,17 @@ resource "github_organization_project" "this" {
   name = each.value["name"]
   body = each.value["body"]
 }
+
+resource "github_organization_webhook" "this" {
+  for_each = local.rendered_webhooks
+
+  active = each.value["active"]
+  events = each.value["events"]
+
+  configuration {
+    url          = each.value["configuration"]["url"]
+    content_type = each.value["configuration"]["content_type"]
+    secret       = each.value["configuration"]["secret"]
+    insecure_ssl = each.value["configuration"]["insecure_ssl"]
+  }
+}
