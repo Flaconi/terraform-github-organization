@@ -35,7 +35,7 @@ No resources.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_projects"></a> [projects](#output\_projects) | A map of create secret names |
+| <a name="output_projects"></a> [projects](#output\_projects) | A list of create projects |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 

@@ -29,6 +29,6 @@ module "organization" {
 }
 
 output "projects" {
-  description = "A map of create secret names"
+  description = "A list of create projects"
   value       = module.organization.projects
 }
