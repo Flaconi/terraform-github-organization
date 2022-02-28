@@ -7,3 +7,13 @@ output "secrets" {
     }
   }
 }
+
+output "projects" {
+  description = "A list of created projects"
+  value = [
+    for id, project in github_organization_project.this : {
+      name = project.name
+      url  = project.url
+    }
+  ]
+}
