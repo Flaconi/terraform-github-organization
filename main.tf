@@ -7,3 +7,10 @@ resource "github_actions_organization_secret" "this" {
   plaintext_value         = lookup(each.value, "plaintext_value", null)
   selected_repository_ids = each.value.visibility == "selected" ? [for r in lookup(each.value, "repositories", []) : data.github_repository.managed[r].repo_id] : []
 }
+
+resource "github_organization_project" "this" {
+  for_each = local.projects
+
+  name = each.value["name"]
+  body = each.value["body"]
+}
