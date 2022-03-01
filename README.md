@@ -5,6 +5,7 @@ Terraform module to manage settings of GitHub organization
 [![lint](https://github.com/flaconi/terraform-github-organization/workflows/lint/badge.svg)](https://github.com/flaconi/terraform-github-organization/actions?query=workflow%3Alint)
 [![test](https://github.com/flaconi/terraform-github-organization/workflows/test/badge.svg)](https://github.com/flaconi/terraform-github-organization/actions?query=workflow%3Atest)
 [![Tag](https://img.shields.io/github/tag/flaconi/terraform-github-organization.svg)](https://github.com/flaconi/terraform-github-organization/releases)
+[![Terraform](https://img.shields.io/badge/Terraform--registry-github--organization-brightgreen.svg)](https://registry.terraform.io/modules/Flaconi/organization/github/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Important notice
