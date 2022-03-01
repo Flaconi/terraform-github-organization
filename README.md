@@ -69,6 +69,21 @@ map(object({
 
 Default: `{}`
 
+### <a name="input_projects"></a> [projects](#input\_projects)
+
+Description: Global organization projects
+
+Type:
+
+```hcl
+list(object({
+    name = string
+    body = optional(string)
+  }))
+```
+
+Default: `[]`
+
 <!-- TFDOCS_INPUTS_END -->
 
 <!-- TFDOCS_OUTPUTS_START -->
@@ -76,6 +91,7 @@ Default: `{}`
 
 | Name | Description |
 |------|-------------|
+| <a name="output_projects"></a> [projects](#output\_projects) | A list of created projects |
 | <a name="output_secrets"></a> [secrets](#output\_secrets) | A map of create secret names |
 
 <!-- TFDOCS_OUTPUTS_END -->

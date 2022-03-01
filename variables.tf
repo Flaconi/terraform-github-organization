@@ -13,3 +13,12 @@ variable "secrets" {
   }))
   default = {}
 }
+
+variable "projects" {
+  description = "Global organization projects"
+  type = list(object({
+    name = string
+    body = optional(string)
+  }))
+  default = []
+}
