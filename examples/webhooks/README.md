@@ -12,9 +12,7 @@ This example will multiple secrets for organization.
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| <a name="provider_github"></a> [github](#provider\_github) | >= 4.20 |
+No providers.
 
 ## Modules
 
@@ -24,9 +22,7 @@ This example will multiple secrets for organization.
 
 ## Resources
 
-| Name | Type |
-|------|------|
-| [github_repository.test](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository) | resource |
+No resources.
 
 ## Inputs
 
@@ -39,7 +35,7 @@ This example will multiple secrets for organization.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_secrets"></a> [secrets](#output\_secrets) | A map of create secret names |
+| <a name="output_webhooks"></a> [webhooks](#output\_webhooks) | A map of create webhook URLs |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 

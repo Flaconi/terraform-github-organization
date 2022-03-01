@@ -17,3 +17,8 @@ output "projects" {
     }
   ]
 }
+
+output "webhook_urls" {
+  description = "Webhook URLs"
+  value       = { for k, v in github_organization_webhook.this : k => v.url }
+}
