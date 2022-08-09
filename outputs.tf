@@ -8,6 +8,16 @@ output "secrets" {
   }
 }
 
+output "bot_secrets" {
+  description = "A map of create dependabot secret names"
+  value = {
+    for name, secret in github_dependabot_organization_secret.this : name => {
+      created = secret.created_at
+      updated = secret.updated_at
+    }
+  }
+}
+
 output "projects" {
   description = "A list of created projects"
   value = [

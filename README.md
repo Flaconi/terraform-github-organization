@@ -24,7 +24,7 @@ More about it [here](https://www.terraform.io/language/expressions/type-constrai
 
 | Name | Version |
 |------|---------|
-| <a name="provider_github"></a> [github](#provider\_github) | >= 4.20 |
+| <a name="provider_github"></a> [github](#provider\_github) | >= 4.26.1 |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -34,7 +34,7 @@ More about it [here](https://www.terraform.io/language/expressions/type-constrai
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
-| <a name="requirement_github"></a> [github](#requirement\_github) | >= 4.20 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | >= 4.26.1 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
 
@@ -65,6 +65,23 @@ map(object({
     plaintext_value = optional(string)
     visibility      = string # "all", "private" or "selected"
     repositories    = optional(set(string))
+  }))
+```
+
+Default: `{}`
+
+### <a name="input_bot_secrets"></a> [bot\_secrets](#input\_bot\_secrets)
+
+Description: Global dependabot secrets
+
+Type:
+
+```hcl
+map(object({
+    bot_encrypted_value = optional(string)
+    bot_plaintext_value = optional(string)
+    visibility          = string # "all", "private" or "selected"
+    repositories        = optional(set(string))
   }))
 ```
 
@@ -114,6 +131,7 @@ Default: `[]`
 
 | Name | Description |
 |------|-------------|
+| <a name="output_bot_secrets"></a> [bot\_secrets](#output\_bot\_secrets) | A map of create dependabot secret names |
 | <a name="output_projects"></a> [projects](#output\_projects) | A list of created projects |
 | <a name="output_secrets"></a> [secrets](#output\_secrets) | A map of create secret names |
 | <a name="output_webhook_urls"></a> [webhook\_urls](#output\_webhook\_urls) | Webhook URLs |
