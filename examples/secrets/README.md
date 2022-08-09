@@ -8,13 +8,13 @@ This example will multiple secrets for organization.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
-| <a name="requirement_github"></a> [github](#requirement\_github) | >= 4.20 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | >= 4.26.1 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_github"></a> [github](#provider\_github) | >= 4.20 |
+| <a name="provider_github"></a> [github](#provider\_github) | >= 4.26.1 |
 
 ## Modules
 
@@ -39,7 +39,8 @@ This example will multiple secrets for organization.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_secrets"></a> [secrets](#output\_secrets) | A map of create secret names |
+| <a name="output_action_secrets"></a> [action\_secrets](#output\_action\_secrets) | A map of create secret names |
+| <a name="output_bot_secrets"></a> [bot\_secrets](#output\_bot\_secrets) | A map of create dependabot secret names |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
