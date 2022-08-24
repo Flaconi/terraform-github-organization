@@ -17,10 +17,10 @@ variable "secrets" {
 variable "bot_secrets" {
   description = "Global dependabot secrets"
   type = map(object({
-    bot_encrypted_value = optional(string)
-    bot_plaintext_value = optional(string)
-    visibility          = string # "all", "private" or "selected"
-    repositories        = optional(set(string))
+    encrypted_value = optional(string)
+    plaintext_value = optional(string)
+    visibility      = string # "all", "private" or "selected"
+    repositories    = optional(set(string))
   }))
   default = {}
 }
