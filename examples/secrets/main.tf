@@ -45,16 +45,16 @@ module "organization" {
       visibility = "all"
     },
     BOT_PLAIN_TEXT_SECRET = {
-      bot_plaintext_value = "other_secret"
+      plaintext_value = "other_secret"
       visibility          = "private"
     }
     ENCRYPTED_SECRET = {
       # Value encrypted with organization public key
       # Public key: https://docs.github.com/en/rest/reference/actions#get-an-organization-public-key
       # Ecnryption: https://docs.github.com/en/rest/reference/actions#create-or-update-an-organization-secret
-      bot_encrypted_value = "P1wD+Byzy0JvL77qILs1gLj1wpDIDYIKGcHJbuILlTq3lNLgxDQuHXLVYknj2nx6uaeNGx3AmgsO+Nak"
-      visibility          = "selected"
-      repositories        = [github_repository.test.name]
+      encrypted_value = "P1wD+Byzy0JvL77qILs1gLj1wpDIDYIKGcHJbuILlTq3lNLgxDQuHXLVYknj2nx6uaeNGx3AmgsO+Nak"
+      visibility      = "selected"
+      repositories    = [github_repository.test.name]
     }
   }
 
