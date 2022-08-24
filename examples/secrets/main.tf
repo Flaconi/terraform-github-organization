@@ -46,7 +46,7 @@ module "organization" {
     },
     BOT_PLAIN_TEXT_SECRET = {
       plaintext_value = "other_secret"
-      visibility          = "private"
+      visibility      = "private"
     }
     ENCRYPTED_SECRET = {
       # Value encrypted with organization public key
