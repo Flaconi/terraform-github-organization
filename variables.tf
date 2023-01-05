@@ -5,14 +5,13 @@ variable "name" {
 
 variable "settings" {
   description = "Global organization settings"
-  type = map(object({
+  type = object({
     billing_email                                                = string
     company                                                      = optional(string)
     blog                                                         = optional(string)
     email                                                        = optional(string)
     twitter_username                                             = optional(string)
     location                                                     = optional(string)
-    name                                                         = optional(string)
     description                                                  = optional(string)
     has_organization_projects                                    = optional(bool)
     has_repository_projects                                      = optional(bool)
@@ -32,7 +31,7 @@ variable "settings" {
     dependency_graph_enabled_for_new_repositories                = optional(bool)
     secret_scanning_enabled_for_new_repositories                 = optional(bool)
     secret_scanning_push_protection_enabled_for_new_repositories = optional(bool)
-  }))
+  })
   default = null
 }
 

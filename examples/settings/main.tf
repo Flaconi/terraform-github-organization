@@ -24,7 +24,6 @@ module "organization" {
     email            = "test@example.com"
     twitter_username = "Test"
     location         = "Test Location"
-    name             = "Test Name"
   }
 }
 
