@@ -105,13 +105,13 @@ Type:
 ```hcl
 list(object({
     ident  = string # some unique string to identify this webhook
-    active = optional(bool)
+    active = optional(bool, true)
     events = list(string)
     configuration = object({
       url          = string
       content_type = string
       secret       = optional(string)
-      insecure_ssl = optional(bool)
+      insecure_ssl = optional(bool, false)
     })
   }))
 ```
