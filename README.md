@@ -47,6 +47,45 @@ Type: `string`
 
 The following input variables are optional (have default values):
 
+### <a name="input_settings"></a> [settings](#input\_settings)
+
+Description: Global organization settings
+
+Type:
+
+```hcl
+map(object({
+    billing_email                                                = string
+    company                                                      = optional(string)
+    blog                                                         = optional(string)
+    email                                                        = optional(string)
+    twitter_username                                             = optional(string)
+    location                                                     = optional(string)
+    name                                                         = optional(string)
+    description                                                  = optional(string)
+    has_organization_projects                                    = optional(bool)
+    has_repository_projects                                      = optional(bool)
+    default_repository_permission                                = optional(string)
+    members_can_create_repositories                              = optional(bool)
+    members_can_create_public_repositories                       = optional(bool)
+    members_can_create_private_repositories                      = optional(bool)
+    members_can_create_internal_repositories                     = optional(bool)
+    members_can_create_pages                                     = optional(bool)
+    members_can_create_public_pages                              = optional(bool)
+    members_can_create_private_pages                             = optional(bool)
+    members_can_fork_private_repositories                        = optional(bool)
+    web_commit_signoff_required                                  = optional(bool)
+    advanced_security_enabled_for_new_repositories               = optional(bool)
+    dependabot_alerts_enabled_for_new_repositories               = optional(bool)
+    dependabot_security_updates_enabled_for_new_repositories     = optional(bool)
+    dependency_graph_enabled_for_new_repositories                = optional(bool)
+    secret_scanning_enabled_for_new_repositories                 = optional(bool)
+    secret_scanning_push_protection_enabled_for_new_repositories = optional(bool)
+  }))
+```
+
+Default: `null`
+
 ### <a name="input_secrets"></a> [secrets](#input\_secrets)
 
 Description: Global organization secrets
@@ -128,6 +167,7 @@ Default: `[]`
 | <a name="output_bot_secrets"></a> [bot\_secrets](#output\_bot\_secrets) | A map of create dependabot secret names |
 | <a name="output_projects"></a> [projects](#output\_projects) | A list of created projects |
 | <a name="output_secrets"></a> [secrets](#output\_secrets) | A map of create secret names |
+| <a name="output_settings"></a> [settings](#output\_settings) | Organization settings |
 | <a name="output_webhook_urls"></a> [webhook\_urls](#output\_webhook\_urls) | Webhook URLs |
 
 <!-- TFDOCS_OUTPUTS_END -->

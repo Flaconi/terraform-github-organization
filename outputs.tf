@@ -1,3 +1,8 @@
+output "settings" {
+  description = "Organization settings"
+  value       = github_organization_settings.this
+}
+
 output "secrets" {
   description = "A map of create secret names"
   value = {
