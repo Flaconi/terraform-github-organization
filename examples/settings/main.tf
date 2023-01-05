@@ -18,12 +18,14 @@ module "organization" {
   name   = var.org
 
   settings = {
-    billing_email    = "test@example.com"
-    company          = "Test Company"
-    blog             = "https://example.com"
-    email            = "test@example.com"
-    twitter_username = "Test"
-    location         = "Test Location"
+    general = {
+      billing_email    = "test@example.com"
+      company          = "Test Company"
+      blog             = "https://example.com"
+      email            = "test@example.com"
+      twitter_username = "Test"
+      location         = "Test Location"
+    }
   }
 }
 

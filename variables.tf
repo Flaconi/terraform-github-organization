@@ -6,31 +6,41 @@ variable "name" {
 variable "settings" {
   description = "Global organization settings"
   type = object({
-    billing_email                                                = string
-    company                                                      = optional(string)
-    blog                                                         = optional(string)
-    email                                                        = optional(string)
-    twitter_username                                             = optional(string)
-    location                                                     = optional(string)
-    description                                                  = optional(string)
-    has_organization_projects                                    = optional(bool)
-    has_repository_projects                                      = optional(bool)
-    default_repository_permission                                = optional(string)
-    members_can_create_repositories                              = optional(bool)
-    members_can_create_public_repositories                       = optional(bool)
-    members_can_create_private_repositories                      = optional(bool)
-    members_can_create_internal_repositories                     = optional(bool)
-    members_can_create_pages                                     = optional(bool)
-    members_can_create_public_pages                              = optional(bool)
-    members_can_create_private_pages                             = optional(bool)
-    members_can_fork_private_repositories                        = optional(bool)
-    web_commit_signoff_required                                  = optional(bool)
-    advanced_security_enabled_for_new_repositories               = optional(bool)
-    dependabot_alerts_enabled_for_new_repositories               = optional(bool)
-    dependabot_security_updates_enabled_for_new_repositories     = optional(bool)
-    dependency_graph_enabled_for_new_repositories                = optional(bool)
-    secret_scanning_enabled_for_new_repositories                 = optional(bool)
-    secret_scanning_push_protection_enabled_for_new_repositories = optional(bool)
+    general = object({
+      billing_email    = string
+      company          = optional(string)
+      blog             = optional(string)
+      email            = optional(string)
+      twitter_username = optional(string)
+      location         = optional(string)
+      description      = optional(string)
+    })
+    projects = optional(object({
+      organization = optional(bool)
+      repository   = optional(bool)
+    }))
+    repository = optional(object({
+      default_permission          = optional(string)
+      web_commit_signoff_required = optional(bool)
+    }))
+    members = optional(object({
+      create_repositories          = optional(bool)
+      create_public_repositories   = optional(bool)
+      create_private_repositories  = optional(bool)
+      create_internal_repositories = optional(bool)
+      create_pages                 = optional(bool)
+      create_public_pages          = optional(bool)
+      create_private_pages         = optional(bool)
+      fork_private_repositories    = optional(bool)
+    }))
+    security_for_new_repositories = optional(object({
+      advanced_security               = optional(bool)
+      dependabot_alerts               = optional(bool)
+      dependabot_security_updates     = optional(bool)
+      dependency_graph                = optional(bool)
+      secret_scanning                 = optional(bool)
+      secret_scanning_push_protection = optional(bool)
+    }))
   })
   default = null
 }
