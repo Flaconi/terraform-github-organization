@@ -47,6 +47,54 @@ Type: `string`
 
 The following input variables are optional (have default values):
 
+### <a name="input_settings"></a> [settings](#input\_settings)
+
+Description: Global organization settings
+
+Type:
+
+```hcl
+object({
+    general = object({
+      billing_email    = string
+      company          = optional(string)
+      blog             = optional(string)
+      email            = optional(string)
+      twitter_username = optional(string)
+      location         = optional(string)
+      description      = optional(string)
+    })
+    projects = optional(object({
+      organization = optional(bool)
+      repository   = optional(bool)
+    }))
+    repository = optional(object({
+      default_permission          = optional(string)
+      web_commit_signoff_required = optional(bool)
+    }))
+    members = optional(object({
+      create_repositories          = optional(bool)
+      create_public_repositories   = optional(bool)
+      create_private_repositories  = optional(bool)
+      create_internal_repositories = optional(bool)
+      create_pages                 = optional(bool)
+      create_public_pages          = optional(bool)
+      create_private_pages         = optional(bool)
+      fork_private_repositories    = optional(bool)
+    }))
+    security_for_new_repositories = optional(object({
+      advanced_security               = optional(bool)
+      dependabot_alerts               = optional(bool)
+      dependabot_security_updates     = optional(bool)
+      dependency_graph                = optional(bool)
+      secret_scanning                 = optional(bool)
+      secret_scanning_push_protection = optional(bool)
+    }))
+  })
+```
+
+Default: `null`
+
 ### <a name="input_secrets"></a> [secrets](#input\_secrets)
 
 Description: Global organization secrets
@@ -128,6 +176,7 @@ Default: `[]`
 | <a name="output_bot_secrets"></a> [bot\_secrets](#output\_bot\_secrets) | A map of create dependabot secret names |
 | <a name="output_projects"></a> [projects](#output\_projects) | A list of created projects |
 | <a name="output_secrets"></a> [secrets](#output\_secrets) | A map of create secret names |
+| <a name="output_settings"></a> [settings](#output\_settings) | Organization settings |
 | <a name="output_webhook_urls"></a> [webhook\_urls](#output\_webhook\_urls) | Webhook URLs |
 
 <!-- TFDOCS_OUTPUTS_END -->
