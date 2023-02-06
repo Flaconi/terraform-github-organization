@@ -51,7 +51,7 @@ variable "secrets" {
     encrypted_value = optional(string)
     plaintext_value = optional(string)
     visibility      = string # "all", "private" or "selected"
-    repositories    = optional(set(string))
+    repositories    = optional(set(string), [])
   }))
   default = {}
 }
@@ -62,7 +62,7 @@ variable "bot_secrets" {
     encrypted_value = optional(string)
     plaintext_value = optional(string)
     visibility      = string # "all", "private" or "selected"
-    repositories    = optional(set(string))
+    repositories    = optional(set(string), [])
   }))
   default = {}
 }
