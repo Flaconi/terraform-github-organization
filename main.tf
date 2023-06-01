@@ -28,7 +28,7 @@ resource "github_organization_settings" "this" {
 
   advanced_security_enabled_for_new_repositories               = var.settings["security_for_new_repositories"]["advanced_security"]
   dependabot_alerts_enabled_for_new_repositories               = var.settings["security_for_new_repositories"]["dependabot_alerts"]
-  dependabot_security_updates_enabled_for_new_repositories     = var.settings["security_for_new_repositories"]["dependabot_security_updates_"]
+  dependabot_security_updates_enabled_for_new_repositories     = var.settings["security_for_new_repositories"]["dependabot_security_updates"]
   dependency_graph_enabled_for_new_repositories                = var.settings["security_for_new_repositories"]["dependency_graph"]
   secret_scanning_enabled_for_new_repositories                 = var.settings["security_for_new_repositories"]["secret_scanning"]
   secret_scanning_push_protection_enabled_for_new_repositories = var.settings["security_for_new_repositories"]["secret_scanning_push_protection"]
