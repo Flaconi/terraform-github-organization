@@ -8,6 +8,7 @@ variable "settings" {
   type = object({
     general = object({
       billing_email    = string
+      display_name     = optional(string)
       company          = optional(string)
       blog             = optional(string)
       email            = optional(string)
