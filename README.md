@@ -18,7 +18,7 @@ Terraform module to manage settings of GitHub organization
 
 | Name | Version |
 |------|---------|
-| <a name="provider_github"></a> [github](#provider\_github) | >= 5.17.0 |
+| <a name="provider_github"></a> [github](#provider\_github) | >= 5.25.0 |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -28,7 +28,7 @@ Terraform module to manage settings of GitHub organization
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3 |
-| <a name="requirement_github"></a> [github](#requirement\_github) | >= 5.17.0 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | >= 5.25.0 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
 
@@ -57,6 +57,7 @@ Type:
 object({
     general = object({
       billing_email    = string
+      display_name     = optional(string)
       company          = optional(string)
       blog             = optional(string)
       email            = optional(string)
@@ -65,31 +66,31 @@ object({
       description      = optional(string)
     })
     projects = optional(object({
-      organization = optional(bool)
-      repository   = optional(bool)
-    }))
+      organization = optional(bool, true)
+      repository   = optional(bool, true)
+    }), {})
     repository = optional(object({
-      default_permission          = optional(string)
-      web_commit_signoff_required = optional(bool)
-    }))
+      default_permission          = optional(string, "read")
+      web_commit_signoff_required = optional(bool, false)
+    }), {})
     members = optional(object({
-      create_repositories          = optional(bool)
-      create_public_repositories   = optional(bool)
-      create_private_repositories  = optional(bool)
-      create_internal_repositories = optional(bool)
-      create_pages                 = optional(bool)
-      create_public_pages          = optional(bool)
-      create_private_pages         = optional(bool)
-      fork_private_repositories    = optional(bool)
-    }))
+      create_repositories          = optional(bool, true)
+      create_public_repositories   = optional(bool, true)
+      create_private_repositories  = optional(bool, true)
+      create_internal_repositories = optional(bool, true)
+      create_pages                 = optional(bool, true)
+      create_public_pages          = optional(bool, true)
+      create_private_pages         = optional(bool, true)
+      fork_private_repositories    = optional(bool, false)
+    }), {})
     security_for_new_repositories = optional(object({
-      advanced_security               = optional(bool)
-      dependabot_alerts               = optional(bool)
-      dependabot_security_updates     = optional(bool)
-      dependency_graph                = optional(bool)
-      secret_scanning                 = optional(bool)
-      secret_scanning_push_protection = optional(bool)
-    }))
+      advanced_security               = optional(bool, false)
+      dependabot_alerts               = optional(bool, false)
+      dependabot_security_updates     = optional(bool, false)
+      dependency_graph                = optional(bool, false)
+      secret_scanning                 = optional(bool, false)
+      secret_scanning_push_protection = optional(bool, false)
+    }), {})
   })
 ```
 

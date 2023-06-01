@@ -1,7 +1,7 @@
 resource "github_organization_settings" "this" {
   count = var.settings != null ? 1 : 0
 
-  name = var.name
+  name = var.settings["general"]["display_name"] != null ? var.settings["general"]["display_name"] : var.name
 
   billing_email    = var.settings["general"]["billing_email"]
   company          = var.settings["general"]["company"]
