@@ -84,11 +84,18 @@ variable "webhooks" {
     events = list(string)
     configuration = object({
       url          = string
-      content_type = string
+      content_type = optional(string, "json")
       secret       = optional(string)
       insecure_ssl = optional(bool, false)
     })
   }))
   default     = []
   description = "List of webhook configurations."
+
+  validation {
+    condition = alltrue([
+      for webhook in var.webhooks : contains(["json", "form"], webhook.configuration.content_type)
+    ])
+    error_message = "Invalid 'content_type' specified for a webhook. Allowed values are \"json\" or \"form\"."
+  }
 }
