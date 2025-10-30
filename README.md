@@ -130,21 +130,6 @@ map(object({
 
 Default: `{}`
 
-### <a name="input_projects"></a> [projects](#input\_projects)
-
-Description: Global organization projects
-
-Type:
-
-```hcl
-list(object({
-    name = string
-    body = optional(string)
-  }))
-```
-
-Default: `[]`
-
 ### <a name="input_webhooks"></a> [webhooks](#input\_webhooks)
 
 Description: List of webhook configurations.
@@ -175,7 +160,6 @@ Default: `[]`
 | Name | Description |
 |------|-------------|
 | <a name="output_bot_secrets"></a> [bot\_secrets](#output\_bot\_secrets) | A map of create dependabot secret names |
-| <a name="output_projects"></a> [projects](#output\_projects) | A list of created projects |
 | <a name="output_secrets"></a> [secrets](#output\_secrets) | A map of create secret names |
 | <a name="output_settings"></a> [settings](#output\_settings) | Organization settings |
 | <a name="output_webhook_urls"></a> [webhook\_urls](#output\_webhook\_urls) | Webhook URLs |

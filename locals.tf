@@ -1,8 +1,4 @@
 locals {
-  projects = { for p in var.projects :
-    replace(lower(p["name"]), " ", "-") => p
-  }
-
   # Combine defaults with input parameters
   rendered_webhooks = {
     for v in var.webhooks : v["ident"] => {

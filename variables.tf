@@ -68,15 +68,6 @@ variable "bot_secrets" {
   default = {}
 }
 
-variable "projects" {
-  description = "Global organization projects"
-  type = list(object({
-    name = string
-    body = optional(string)
-  }))
-  default = []
-}
-
 variable "webhooks" {
   type = list(object({
     ident  = string # some unique string to identify this webhook

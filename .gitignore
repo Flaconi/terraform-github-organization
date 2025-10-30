@@ -18,5 +18,6 @@ override.tf.json
 # Lock file
 .terraform.lock.hcl
 
-# Vars file
-/*.tfvars
+# Local tfvars files (do not commit secrets)
+terraform.tfvars
+*.auto.tfvars
