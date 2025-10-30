@@ -54,14 +54,6 @@ resource "github_dependabot_organization_secret" "this" {
   selected_repository_ids = each.value.visibility == "selected" ? [for r in each.value["repositories"] : data.github_repository.managed[r].repo_id] : []
 }
 
-
-resource "github_organization_project" "this" {
-  for_each = local.projects
-
-  name = each.value["name"]
-  body = each.value["body"]
-}
-
 resource "github_organization_webhook" "this" {
   for_each = local.rendered_webhooks
 

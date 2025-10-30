@@ -1,6 +1,6 @@
 output "settings" {
   description = "Organization settings"
-  value       = github_organization_settings.this
+  value       = try(github_organization_settings.this[0], null)
 }
 
 output "secrets" {
@@ -21,16 +21,6 @@ output "bot_secrets" {
       updated = secret.updated_at
     }
   }
-}
-
-output "projects" {
-  description = "A list of created projects"
-  value = [
-    for id, project in github_organization_project.this : {
-      name = project.name
-      url  = project.url
-    }
-  ]
 }
 
 output "webhook_urls" {
