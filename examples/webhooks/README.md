@@ -8,7 +8,7 @@ This example will multiple secrets for organization.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3 |
-| <a name="requirement_github"></a> [github](#requirement\_github) | ~> 6.6 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | 6.7.5 |
 
 ## Providers
 
