@@ -8,13 +8,13 @@ This example will multiple secrets for organization.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3 |
-| <a name="requirement_github"></a> [github](#requirement\_github) | ~> 6.6 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | 6.7.5 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_github"></a> [github](#provider\_github) | ~> 6.6 |
+| <a name="provider_github"></a> [github](#provider\_github) | 6.7.5 |
 
 ## Modules
 
@@ -26,7 +26,7 @@ This example will multiple secrets for organization.
 
 | Name | Type |
 |------|------|
-| [github_repository.test](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository) | resource |
+| [github_repository.test](https://registry.terraform.io/providers/integrations/github/6.7.5/docs/resources/repository) | resource |
 
 ## Inputs
 
