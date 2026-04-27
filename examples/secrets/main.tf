@@ -25,6 +25,7 @@ module "organization" {
 
   secrets = {
     TEST_SECRET = {
+      value      = "test_secret"
       visibility = "all"
     },
     SOME_PLAIN_TEXT_SECRET = {
@@ -42,6 +43,7 @@ module "organization" {
   }
   bot_secrets = {
     TEST_SECRET = {
+      value      = "test_secret"
       visibility = "all"
     },
     BOT_PLAIN_TEXT_SECRET = {
