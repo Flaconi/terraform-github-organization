@@ -49,8 +49,8 @@ resource "github_dependabot_organization_secret" "this" {
 
   secret_name             = each.key
   visibility              = each.value.visibility
-  value                   = lookup(each.value, "plaintext_value", null)
-  value_encrypted         = lookup(each.value, "encrypted_value", null)
+  value                   = lookup(each.value, "value", null)
+  value_encrypted         = lookup(each.value, "value_encrypted", null)
   selected_repository_ids = each.value.visibility == "selected" ? [for r in each.value["repositories"] : data.github_repository.managed[r].repo_id] : []
 }
 
