@@ -49,8 +49,8 @@ variable "settings" {
 variable "secrets" {
   description = "Global organization secrets"
   type = map(object({
-    encrypted_value = optional(string)
-    plaintext_value = optional(string)
+    value           = optional(string)
+    value_encrypted = optional(string)
     visibility      = string # "all", "private" or "selected"
     repositories    = optional(set(string), [])
   }))
@@ -60,8 +60,8 @@ variable "secrets" {
 variable "bot_secrets" {
   description = "Global dependabot secrets"
   type = map(object({
-    encrypted_value = optional(string)
-    plaintext_value = optional(string)
+    value           = optional(string)
+    value_encrypted = optional(string)
     visibility      = string # "all", "private" or "selected"
     repositories    = optional(set(string), [])
   }))
