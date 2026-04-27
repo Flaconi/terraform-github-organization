@@ -34,9 +34,9 @@ module "organization" {
     }
     ENCRYPTED_SECRET = {
       # Value encrypted with organization public key
-      # Public key: https://docs.github.com/en/rest/reference/actions#get-an-organization-public-key
-      # Ecnryption: https://docs.github.com/en/rest/reference/actions#create-or-update-an-organization-secret
-      value_encrypted = "P1wD+Byzy0JvL77qILs1gLj1wpDIDYIKGcHJbuILlTq3lNLgxDQuHXLVYknj2nx6uaeNGx3AmgsO+Nak"
+      # Public key: https://docs.github.com/en/rest/actions/secrets?apiVersion=2026-03-10#get-an-organization-public-key
+      # Encryption: https://docs.github.com/en/rest/guides/encrypting-secrets-for-the-rest-api?apiVersion=2026-03-10
+      value_encrypted = "9kDPWbJ2FhSAE0XPqTHS4Ueno8wWoJIAPYlayvY583lc+l2olynOFL+GOpPO5JZlEHAPUVTA5hiKJo/794MISQ=="
       visibility      = "selected"
       repositories    = [github_repository.test.name]
     }
@@ -52,9 +52,9 @@ module "organization" {
     }
     ENCRYPTED_SECRET = {
       # Value encrypted with organization public key
-      # Public key: https://docs.github.com/en/rest/reference/actions#get-an-organization-public-key
-      # Ecnryption: https://docs.github.com/en/rest/reference/actions#create-or-update-an-organization-secret
-      value_encrypted = "P1wD+Byzy0JvL77qILs1gLj1wpDIDYIKGcHJbuILlTq3lNLgxDQuHXLVYknj2nx6uaeNGx3AmgsO+Nak"
+      # Public key: https://docs.github.com/en/rest/dependabot/secrets?apiVersion=2026-03-10#get-an-organization-public-key
+      # Encryption: https://docs.github.com/en/rest/guides/encrypting-secrets-for-the-rest-api?apiVersion=2026-03-10
+      value_encrypted = "cUptE62ZyXD2QYDLoz7w2UrQ2AebMoKArEc4QHs3Mz4DsByV7AyUlWhnt/drYJj+GPUshLav4DAo8sm1SF+Ixw=="
       visibility      = "selected"
       repositories    = [github_repository.test.name]
     }

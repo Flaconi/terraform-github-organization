@@ -41,6 +41,7 @@ resource "github_actions_organization_secret" "this" {
   visibility              = each.value.visibility
   value                   = lookup(each.value, "value", null)
   value_encrypted         = lookup(each.value, "value_encrypted", null)
+  key_id                  = lookup(each.value, "value_encrypted", null) != null ? data.github_actions_organization_public_key.this.key_id : null
   selected_repository_ids = each.value.visibility == "selected" ? [for r in each.value["repositories"] : data.github_repository.managed[r].repo_id] : []
 }
 
@@ -51,6 +52,7 @@ resource "github_dependabot_organization_secret" "this" {
   visibility              = each.value.visibility
   value                   = lookup(each.value, "value", null)
   value_encrypted         = lookup(each.value, "value_encrypted", null)
+  key_id                  = lookup(each.value, "value_encrypted", null) != null ? data.github_dependabot_organization_public_key.this.key_id : null
   selected_repository_ids = each.value.visibility == "selected" ? [for r in each.value["repositories"] : data.github_repository.managed[r].repo_id] : []
 }
 
