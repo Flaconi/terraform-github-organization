@@ -34,6 +34,14 @@ resource "github_organization_settings" "this" {
   secret_scanning_push_protection_enabled_for_new_repositories = var.settings["security_for_new_repositories"]["secret_scanning_push_protection"]
 }
 
+resource "github_actions_organization_workflow_permissions" "this" {
+  count = var.workflow_permissions != null ? 1 : 0
+
+  organization_slug                = var.name
+  default_workflow_permissions     = var.workflow_permissions["default_workflow_permissions"]
+  can_approve_pull_request_reviews = var.workflow_permissions["can_approve_pull_request_reviews"]
+}
+
 resource "github_actions_organization_secret" "this" {
   for_each = var.secrets
 

@@ -27,6 +27,11 @@ module "organization" {
       location         = "Test Location"
     }
   }
+
+  workflow_permissions = {
+    default_workflow_permissions     = "read"
+    can_approve_pull_request_reviews = false
+  }
 }
 
 output "projects" {
