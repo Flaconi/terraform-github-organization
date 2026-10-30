@@ -46,6 +46,20 @@ variable "settings" {
   default = null
 }
 
+variable "workflow_permissions" {
+  description = "GitHub Actions workflow permissions for the organization"
+  type = object({
+    default_workflow_permissions     = optional(string, "read") # "read" or "write"
+    can_approve_pull_request_reviews = optional(bool, false)
+  })
+  default = null
+
+  validation {
+    condition     = var.workflow_permissions == null || contains(["read", "write"], try(var.workflow_permissions.default_workflow_permissions, ""))
+    error_message = "Invalid 'default_workflow_permissions' specified. Allowed values are \"read\" or \"write\"."
+  }
+}
+
 variable "secrets" {
   description = "Global organization secrets"
   type = map(object({

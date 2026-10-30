@@ -18,7 +18,7 @@ Terraform module to manage settings of GitHub organization
 
 | Name | Version |
 |------|---------|
-| <a name="provider_github"></a> [github](#provider\_github) | ~> 6.12 |
+| <a name="provider_github"></a> [github](#provider\_github) | ~> 6.13 |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -28,7 +28,7 @@ Terraform module to manage settings of GitHub organization
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3 |
-| <a name="requirement_github"></a> [github](#requirement\_github) | ~> 6.12 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | ~> 6.13 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
 
@@ -91,6 +91,21 @@ object({
       secret_scanning                 = optional(bool, false)
       secret_scanning_push_protection = optional(bool, false)
     }), {})
+  })
+```
+
+Default: `null`
+
+### <a name="input_workflow_permissions"></a> [workflow\_permissions](#input\_workflow\_permissions)
+
+Description: GitHub Actions workflow permissions for the organization
+
+Type:
+
+```hcl
+object({
+    default_workflow_permissions     = optional(string, "read") # "read" or "write"
+    can_approve_pull_request_reviews = optional(bool, false)
   })
 ```
 
@@ -163,6 +178,7 @@ Default: `[]`
 | <a name="output_secrets"></a> [secrets](#output\_secrets) | A map of create secret names |
 | <a name="output_settings"></a> [settings](#output\_settings) | Organization settings |
 | <a name="output_webhook_urls"></a> [webhook\_urls](#output\_webhook\_urls) | Webhook URLs |
+| <a name="output_workflow_permissions"></a> [workflow\_permissions](#output\_workflow\_permissions) | Organization GitHub Actions workflow permissions |
 
 <!-- TFDOCS_OUTPUTS_END -->
 
